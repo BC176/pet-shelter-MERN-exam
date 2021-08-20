@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.App {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: bisque;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h5 {
+  text-align: center;
+  padding: 5px;
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
