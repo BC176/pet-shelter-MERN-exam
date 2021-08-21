@@ -17,32 +17,50 @@ const DisplayAllPets = (props) => {
             .catch((err) => console.log(err));
     }, [formSubmittedBoolean]);
 
-    const deletePet = (id) => {
-        axios
-            .delete(`http://localhost:8000/api/${id}`)
-            .then((response) => {
-                setFormSubmittedBoolean(!formSubmittedBoolean);
-            })
-            .catch((err) => console.log(err));
-    };
+    // const deletePet = (id) => {
+    //     axios
+    //         .delete(`http://localhost:8000/api/${id}`)
+    //         .then((response) => {
+    //             setFormSubmittedBoolean(!formSubmittedBoolean);
+    //         })
+    //         .catch((err) => console.log(err));
+    // };
+
+    const sortedPets = pets;
+
+    sortedPets.sort((a, b) => (a.type > b.type) ? 1: -1);
+
     return (
         <div>
-            <h2>Available Pets List</h2>
-            <h5><Link to={"/new"}>😼 Add a Pet for Adoption 🐶</Link></h5>
-            {pets.length > 0 &&
-                pets.map((pet, index) => (
-                    <div key={index}>
-                        <p>{pet.name}</p>
-                        <h5>
-                            <Link to={`/${pet._id}/edit`}>Edit Pet Details</Link>
-                        </h5>
-                        <button><Link to={`/pet/${pet._id}`}>Pet Details</Link></button>
-                        <button onClick={() => deletePet(pet._id)}>
+            <div className="mainTop">
+                <h2>Pet Shelter</h2>
+                <h5><Link className="linkHome" to={"/new"}>😼 Add a Pet for Adoption 🐶</Link></h5>
+            </div>
+            <h5>These pets are looking for a good home:</h5>
+            <div classname="sortedList">
+            <table className="tableDisplayAll">
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+            {sortedPets.length > 0 &&
+                sortedPets.map((pet, index) => (
+                    <tr key={index}>
+                        <td>{pet.name}</td>
+                        <td>{pet.type}</td>
+                        <td><Link to={`/pet/${pet._id}`}>Pet Details | </Link>
+                        <Link to={`/${pet._id}/edit`}>Edit Pet Details</Link></td>
+                        {/* <button onClick={() => deletePet(pet._id)}>
                             Adopt This Pet!
-                        </button>
+                        </button> */}
                         <hr />
-                    </div>
+                    </tr>
                 ))}
+                </tbody>
+            </table>
+            </div>
         </div>
     );
 };

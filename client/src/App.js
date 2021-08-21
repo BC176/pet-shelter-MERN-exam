@@ -11,7 +11,7 @@ function App() {
   const [stateLikes, setStateLikes] = useState(0);
 
   const updateLikes = () => {
-    console.log('hello');
+    // console.log('hello from updateLikes()');
     setStateLikes(stateLikes + 1);
   };
 

@@ -7,16 +7,20 @@
   width: 900px;
   margin-left: auto;
   margin-right: auto;
-  background-color: bisque;
+  background-color: powderblue;
   padding: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  font-family: cursive;
 }
 
-h5 {
-  text-align: center;
-  padding: 5px;
+/* h5,
+h2 {
+  margin-bottom: 10px;
+} */
+
+.mainTop h5 {
+  margin-left: 25px;
 }
 
 button {
@@ -25,8 +29,69 @@ button {
   padding: 5px;
 }
 
-.center {
+/* .center {
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: yellowgreen;
+  color: white;
+}
+
+.mainTop {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.newFormMiddle {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.formSubmit,
+button {
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: black;
+  background-color: yellowgreen;
+}
+
+button {
+  box-shadow: 3px 3px 0px 0px black;
+}
+
+.displayPetMiddle {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.quirksAndPerks {
+  display: flex;
+}
+
+.listReturn {
+  word-wrap: break-word;
+  white-space: pre;
+}
+
+.linkHome {
+  margin-left: 25px;
+}
+
+.editLowerMiddle {
+  margin-left: 20px;
 }
